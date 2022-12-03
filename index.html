@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<title>Page title</title>
+				<link rel="stylesheet" href="styles.css">
+				<style>
+								body {
+				background: #E0F6FF ;
+				margin: 15px;
+}
+.container{				
+				display : table;
+				width: 100%;
+				height: 430px ;
+				padding: 30px ;
+				background: #2236D1 ;
+				
+				border-radius: 15px;
+				box-sizing : border-box ;
+				text-align : center ;
+				
+				
+}
+#BTN{
+				height: 40px;
+				position :relative ;
+				top: 180px ;
+}
+#paragraph{
+				font-weight : bold;
+				text-align :center ;
+				font-size : 20px;
+				color : #FFF;
+				
+}
+#author{
+				font-style : italic ;
+				color : #fff;
+}
+				</style>
+</head>
+<body>
+				<h1>Welcome! </h1>
+				<div class="container">
+								<p id="paragraph"></p>
+								<p id="author"></p>
+										<input type="button" id="BTN" value="Generate quote">
+				</div>
+		
+				<script>
+								const button = document.getElementById("BTN");
+button.addEventListener("click", generateQuote);
+const authorName = document.getElementById("author")
+const paragraph = document.getElementById("paragraph")
+const randomQuotes = {
+				Quotes : [ 
+"The greatest glory in living lies not in never falling, but in rising every time we fall.", 
+"The way to get started is to quit talking and begin doing.", 
+"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma ; which is living with the results of other people's thinking. ", 
+"If life were predictable it would cease to be life, and be without flavor.", 
+"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+"If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.", 
+"Life is what happens when you're busy making other plans."
+], 
+Author : ["-Nelson Mandela", "-Walt Disney", "-Steve Jobs", "-Eleanor Roosevelt", "-Oprah Winfrey"," -James Cameron", "-John Lennon"] 
+
+}
+function generateQuote() {
+				randomIndex = Math.floor(Math.random() * 7)
+				paragraph.innerHTML = randomQuotes.Quotes[randomIndex];
+				authorName.innerHTML= randomQuotes.Author[randomIndex];
+}
+
+				</script>			
+</body>
+</html>
